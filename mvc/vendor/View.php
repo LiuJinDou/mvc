@@ -2,7 +2,7 @@
 /**
  * 视图基层
  */
-class View 
+class View
 {
 	public $_config;
 	private $className;
@@ -23,7 +23,7 @@ class View
 	public function display($filename=null)
 	{
 		!empty($this->_config)?extract($this->_config):'';
-		$filename = empty($filename)?$actionName:$filename;
+		$filename = empty($filename)?$this->actionName:$filename;
 		require  APP_PATH."application/views/{$this->className}/{$filename}";
 		// require APP_PATH.;
 		// echo 'This is display';
